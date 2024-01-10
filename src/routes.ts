@@ -5,6 +5,11 @@ import DeleteCustomerControler from './controlers/DeleteCustomerControler'
 
 export async function routes(fastify: FastifyInstance, options: FastifyPluginOptions){
 
+    fastify.get("/customer", async (request: FastifyRequest, reply: FastifyReply) => {
+        reply.code(200).send("OK");
+    });
+      
+
     fastify.post("/customer", async (request: FastifyRequest, reply: FastifyReply)=>{
 
         return new createCustomerControler().handle(request, reply)
